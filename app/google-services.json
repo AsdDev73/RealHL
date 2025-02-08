@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "44205970170",
+    "project_id": "realhl",
+    "storage_bucket": "realhl.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:44205970170:android:fee7051f87f09442a6ef43",
+        "android_client_info": {
+          "package_name": "com.example.realhl"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7zpd-I_DUvqhV20AtVNJksEJEuTjeSW4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
