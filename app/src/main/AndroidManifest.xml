@@ -1,6 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.realhl">
 
+    <!-- Permisos para acceder a la ubicación -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:theme="@style/Theme.RealHL"
@@ -8,7 +12,10 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:icon="@mipmap/ic_launcher">
-
+        <!-- Agrega la API key de Google Maps -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAGg6-pLyEGSfUANMbt7ZZ-f6q-dCiUoAc" />
         <!-- LoginActivity como actividad principal -->
         <activity android:name=".MainActivity"
             android:exported="true"> <!-- Agregado android:exported -->
