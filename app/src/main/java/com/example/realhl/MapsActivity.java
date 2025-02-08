@@ -27,7 +27,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
 
-        // Obtén el fragmento del mapa y configúralo
+        // cojo el mapa
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         if (mapFragment != null) {
@@ -36,11 +36,11 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
 
-        // Enlaza el botón para cambiar el tipo de mapa
+        // boton para cambiar el tipo
         btnToggleMapType = findViewById(R.id.btnToggleMapType);
         btnToggleMapType.setOnClickListener(v -> {
             if (mMap != null) {
-                // Alterna entre mapa normal y satélite
+                //   mapa normal o satélite
                 if (mMap.getMapType() == GoogleMap.MAP_TYPE_NORMAL) {
                     mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
                 } else {
@@ -54,14 +54,14 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     public void onMapReady(@NonNull GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Verifica permisos de ubicación
+        // da permisos de ubi
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
             return;
         }
         mMap.setMyLocationEnabled(true);
 
-        // Obtén la última ubicación conocida y muestra un marcador
+        // marcador de la posi del equipo
         fusedLocationClient.getLastLocation().addOnSuccessListener(location -> {
             if (location != null) {
                 LatLng myLocation = new LatLng(location.getLatitude(), location.getLongitude());
@@ -70,7 +70,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             }
         });
 
-        // Funcionalidad: agregar marcador al hacer pulsación larga
+        // añadir marca en el mapa
         mMap.setOnMapLongClickListener(latLng -> {
             mMap.addMarker(new MarkerOptions()
                     .position(latLng)

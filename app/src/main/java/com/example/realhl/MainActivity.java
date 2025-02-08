@@ -15,17 +15,17 @@ import com.google.firebase.auth.FirebaseUser;
 public class MainActivity extends AppCompatActivity {
     private EditText emailInput, passwordInput;
     private Button loginButton;
-    private FirebaseAuth auth; // Declarar FirebaseAuth
+    private FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Inicializar FirebaseAuth
+        // inicio el Firebase
         auth = FirebaseAuth.getInstance();
 
-        // Referencias a los elementos del layout
+        // datos
         emailInput = findViewById(R.id.emailInput);
         passwordInput = findViewById(R.id.passwordInput);
         loginButton = findViewById(R.id.loginButton);
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         FirebaseUser user = auth.getCurrentUser();
                         Toast.makeText(MainActivity.this, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show();
-                        // Redirigir a MapsActivity
+                        // Abro el mapa
                         startActivity(new Intent(MainActivity.this, MapsActivity.class));
                         finish();
                     } else {
