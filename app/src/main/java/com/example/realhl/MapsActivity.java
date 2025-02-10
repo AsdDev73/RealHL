@@ -39,7 +39,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
 
-        // Configuramos el botón para cambiar el tipo de mapa
+        // Configuramos el botón para cambiar el estilo mapa
         btnToggleMapType = findViewById(R.id.btnToggleMapType);
         btnToggleMapType.setOnClickListener(v -> {
             if (mMap != null) {
@@ -73,11 +73,11 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
                 // Definimos dos ubicaciones recomendadas (modifica las coordenadas según lo necesites)
                 LatLng recommendedA = new LatLng(36.707344711157184, -4.46730092713356); // Sala Divas
-                LatLng recommendedB = new LatLng(36.691249484680746, -4.467636785418117);  // New Escnadalo,
+                LatLng recommendedB = new LatLng(36.691249484680746, -4.467636785418117);  // New Escandalo,
 
                 // Añadimos los marcadores para las ubicaciones recomendadas
                 mMap.addMarker(new MarkerOptions().position(recommendedA).title("Sala Divas"));
-                mMap.addMarker(new MarkerOptions().position(recommendedB).title("New Escnadalo"));
+                mMap.addMarker(new MarkerOptions().position(recommendedB).title("New Escandalo"));
 
                 // Calculamos la distancia entre la ubicación actual y cada recomendación
                 float[] resultA = new float[1];
@@ -91,11 +91,11 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 // Comparamos y mostramos cuál recomendación está más cerca
                 if (resultA[0] < resultB[0]) {
                     Toast.makeText(MapsActivity.this,
-                            "Recomendamos la Ubicación A (más cercana)",
+                            "El Divas esta mas cerca guarron",
                             Toast.LENGTH_LONG).show();
                 } else {
                     Toast.makeText(MapsActivity.this,
-                            "Recomendamos la Ubicación B (más cercana)",
+                            "Te espero en el escandalo con una asiatica",
                             Toast.LENGTH_LONG).show();
                 }
             }
